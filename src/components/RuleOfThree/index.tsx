@@ -5,12 +5,12 @@ import './styles.scss'
 interface Item {
   id: number;
   value: number;
-	weight: Weight;
+  weight: Weight;
 };
 
 interface Weight {
-	unit: string;
-	value: number;
+  unit: string;
+  value: number;
 };
 
 function RuleOfThree() {
@@ -45,28 +45,44 @@ function RuleOfThree() {
   //   };
   // };
 
-  // const deleteTodo = (todoIndex) => {
-  //   deleteEntry(todoIndex);
-  //   const remainingTodos = todos.filter(({ id }) => id !== todoIndex);
-  //   setTodos(remainingTodos);
-  // };
+  const deleteItem = (itemIndex: number) => {
+    console.log(itemIndex)
+    // deleteEntry(todoIndex);
+    // const remainingTodos = todos.filter(({ id }) => id !== todoIndex);
+    // setTodos(remainingTodos);
+  };
 
   return (
     <div id="ruleOfThree">
-        <ul>
-          {items && items.map((item) => (
-            <li key={item.id}>
-              {item.value} / {item.weight.value + item.weight.unit}
-              {/* <button onClick={() => console.log(item)}>
+      <ul>
+        {items && items.map((item) => (
+          <li key={item.id}>
+            {item.id}: {item.value} / {item.weight.value + item.weight.unit}
+            {/* <button onClick={() => console.log(item)}>
                 edit
               </button>
-              <button onClick={() => deleteitem(item.id)}>
+              */}
+              <button onClick={() => deleteItem(item.id)}>
                 del
-              </button> */}
-            </li>
-          ))}
-        </ul>
-        {/* <div>
+              </button> 
+          </li>
+        ))}
+      </ul>
+      <input
+        type="text"
+        name="itemValue"
+        id="itemValue"
+      // onChange={(handleInputChange)}
+      />
+      <input
+        type="text"
+        name="itemWeightValue"
+        id="itemWeightValue"
+      // onChange={(handleInputChange)}
+      />
+      <select />
+      <button>Adicionar</button>
+      {/* <div>
           <input
             value={newitem.title}
             onChange={createOnNewitemChange("title")}
@@ -77,7 +93,7 @@ function RuleOfThree() {
           />
           <button onClick={() => createitem(newitem)}>add</button>
         </div> */}
-      </div>
+    </div>
   );
 }
 
