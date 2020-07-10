@@ -1,11 +1,14 @@
 import React from 'react';
+import { ReactComponent as Cart } from '../../assets/cart.svg'
 
 import './styles.scss'
+import RuleOfThree from '../../components/RuleOfThree';
 
 function Home() {
   return (
-    <div className="Home">
-      Blau
+    <div id="page-home">
+      <Cart className="cartPicture"/>
+      <RuleOfThree />
     </div>
   );
 }
