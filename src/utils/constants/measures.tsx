@@ -1,4 +1,10 @@
-export const units = [
+export interface Unit {
+  name: string,
+  abbrev: string,
+  multiplier: number,
+};
+
+export const units: Unit[] = [
   {
     name: "unidade",
     abbrev: "und",
