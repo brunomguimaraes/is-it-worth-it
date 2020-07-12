@@ -20,7 +20,7 @@ function RuleOfThree() {
   };
 
   const [items, setItems] = useState<Item[]>([]);
-  const [newItem, setNewItem] = useState(emptyItem);
+  const [newItem, setNewItem] = useState<Item>(emptyItem);
 
   const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = event.target;
@@ -66,12 +66,14 @@ function RuleOfThree() {
         <input
           type="text"
           name="value"
+          value={newItem.value}
           id="itemValue"
           onChange={(handleInputChange)}
-        />
+          />
         <input
           type="text"
           name="weight"
+          value={newItem.weight}
           id="itemWeightValue"
           onChange={(handleInputChange)}
         />
