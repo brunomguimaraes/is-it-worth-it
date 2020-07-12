@@ -6,16 +6,16 @@ import { position } from '../../utils/array';
 
 interface Item {
   id: string;
-  value: string;
+  value: number;
   unit: string;
-  weight: string;
+  weight: number;
 };
 
 function RuleOfThree() {
   const emptyItem = {
     id: "",
-    value: "",
-    weight: "",
+    value: 0,
+    weight: 0,
     unit: "g"
   };
 
