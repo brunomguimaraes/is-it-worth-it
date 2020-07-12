@@ -1,98 +1,82 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, ChangeEvent, FormEvent } from 'react';
+import { id } from '../../utils/id'
 
 import './styles.scss'
+import { position } from '../../utils/array';
 
 interface Item {
-  id: number;
-  value: number;
-  weight: Weight;
-};
-
-interface Weight {
+  id: string;
+  value: string;
   unit: string;
-  value: number;
+  weight: string;
 };
 
 function RuleOfThree() {
-
-  // const emptyItem = {
-  //   title: "",
-  //   description: ""
-  // };
+  const emptyItem = {
+    id: "",
+    value: "",
+    weight: "",
+    unit: "g"
+  };
 
   const [items, setItems] = useState<Item[]>([]);
+  const [newItem, setNewItem] = useState(emptyItem);
 
-  useEffect(() => {
-    const mockItem = {
-      id: 1,
-      value: 10.00,
-      weight: {
-        unit: "g",
-        value: 100
-      }
-    };
-    setItems([mockItem]);
-  }, []);
-  // const [newTodo, setNewTodo] = useState(emptyItem);
-  // // const [editing, setEditing] = useState(false);
-
-  // const createOnNewTodoChange = (field) => {
-  //   return (e) => {
-  //     setNewTodo({
-  //       ...newTodo,
-  //       [field]: e.target.value
-  //     });
-  //   };
-  // };
-
-  const deleteItem = (itemIndex: number) => {
-    console.log(itemIndex)
-    // deleteEntry(todoIndex);
-    // const remainingTodos = todos.filter(({ id }) => id !== todoIndex);
-    // setTodos(remainingTodos);
+  const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = event.target;
+    setNewItem({ ...newItem, [name]: value });
   };
+
+  const handleSubmit = (event: FormEvent) => {
+    event.preventDefault();
+    if (newItem === emptyItem) return;
+    console.log("NEW ITEM:", newItem);
+    console.log("items:", items);
+    const itemWithId = {...newItem, id: id()}
+    console.log("NEW ITEM WITH ID:", itemWithId);
+    setItems(items.concat(itemWithId));
+    setNewItem(emptyItem);
+  };
+
+  const deleteItem = (itemId: string) => {
+    console.log(itemId)
+    const remainingItems = items.filter(({ id }) => id !== itemId);
+    console.log(remainingItems)
+    setItems(remainingItems);
+  };
+
+  const handleSelectUnit = (event: ChangeEvent<HTMLSelectElement>) => {
+    const unit = event.target.value;
+    console.log("selected Unit", unit)
+	};
 
   return (
     <div id="ruleOfThree">
       <ul>
         {items && items.map((item) => (
           <li key={item.id}>
-            {item.id}: {item.value} / {item.weight.value + item.weight.unit}
-            {/* <button onClick={() => console.log(item)}>
-                edit
+            {position(items, item)}: {item.value} / {item.weight + item.unit}
+            <button onClick={() => deleteItem(item.id)}>
+              del
               </button>
-              */}
-              <button onClick={() => deleteItem(item.id)}>
-                del
-              </button> 
           </li>
         ))}
       </ul>
-      <input
-        type="text"
-        name="itemValue"
-        id="itemValue"
-      // onChange={(handleInputChange)}
-      />
-      <input
-        type="text"
-        name="itemWeightValue"
-        id="itemWeightValue"
-      // onChange={(handleInputChange)}
-      />
-      <select />
-      <button>Adicionar</button>
-      {/* <div>
-          <input
-            value={newitem.title}
-            onChange={createOnNewitemChange("title")}
-          />
-          <input
-            value={newitem.description}
-            onChange={createOnNewitemChange("description")}
-          />
-          <button onClick={() => createitem(newitem)}>add</button>
-        </div> */}
+      <form onSubmit={handleSubmit}>
+        <input
+          type="text"
+          name="value"
+          id="itemValue"
+          onChange={(handleInputChange)}
+        />
+        <input
+          type="text"
+          name="weight"
+          id="itemWeightValue"
+          onChange={(handleInputChange)}
+        />
+        <button type="submit">Adicionar</button>
+      </form>
     </div>
   );
 }
