@@ -3,19 +3,23 @@ import { id } from '../../utils/id'
 
 import './styles.scss'
 import { position } from '../../utils/array';
+import BestItem from '../BestItem';
+import { calculatePricePerUnit } from '../../utils/calculators';
 
-interface Item {
+export interface Item {
   id: string;
-  value: number;
+  price: number;
   unit: string;
   weight: number;
+  ratio: number;
 };
 
 function RuleOfThree() {
   const emptyItem = {
     id: "",
-    value: 0,
+    price: 0,
     weight: 0,
+    ratio: 0,
     unit: "g"
   };
 
@@ -30,46 +34,45 @@ function RuleOfThree() {
   const handleSubmit = (event: FormEvent) => {
     event.preventDefault();
     if (newItem === emptyItem) return;
-    console.log("NEW ITEM:", newItem);
-    console.log("items:", items);
-    const itemWithId = {...newItem, id: id()}
-    console.log("NEW ITEM WITH ID:", itemWithId);
-    setItems(items.concat(itemWithId));
+    const itemWithIdAndRatio = { ...newItem, id: id(), ratio: calculatePricePerUnit(newItem) }
+    setItems(items.concat(itemWithIdAndRatio));
     setNewItem(emptyItem);
   };
 
   const deleteItem = (itemId: string) => {
-    console.log(itemId)
     const remainingItems = items.filter(({ id }) => id !== itemId);
-    console.log(remainingItems)
     setItems(remainingItems);
   };
 
   const handleSelectUnit = (event: ChangeEvent<HTMLSelectElement>) => {
     const unit = event.target.value;
     console.log("selected Unit", unit)
-	};
+  };
 
   return (
     <div id="ruleOfThree">
+      {items &&
+        <BestItem items={items} />
+      }
       <ul>
+        r$ /// g
         {items && items.map((item) => (
-          <li key={item.id}>
-            {position(items, item)}: {item.value} / {item.weight + item.unit}
-            <button onClick={() => deleteItem(item.id)}>
-              del
+        <li key={item.id}>
+          {position(items, item)}: R$ {item.price} / {item.weight + item.unit}
+          <button onClick={() => deleteItem(item.id)}>
+            del
               </button>
-          </li>
-        ))}
+        </li>
+      ))}
       </ul>
       <form onSubmit={handleSubmit}>
         <input
           type="text"
-          name="value"
-          value={newItem.value}
+          name="price"
+          value={newItem.price}
           id="itemValue"
           onChange={(handleInputChange)}
-          />
+        />
         <input
           type="text"
           name="weight"
