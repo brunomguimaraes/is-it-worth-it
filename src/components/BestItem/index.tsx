@@ -23,7 +23,7 @@ function BestItem({ items }: IBestItem) {
   return (
     <div>
       {bestItems && bestItems.length !== 0 && `O produto mais em conta é o ${getItemPosition(bestItems[0])} que tem preço igual a ${bestItems[0].price}.
-      Seu valor por unidade de medida é R$ ${bestItems[0].ratio.toFixed(2)}/${(bestItems[0].unit)}`}
+      Seu valor por unidade de medida é R$ ${bestItems[0].ratio.toFixed(2)}`}
     </div>
   );
 }

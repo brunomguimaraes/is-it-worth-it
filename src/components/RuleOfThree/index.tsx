@@ -55,7 +55,6 @@ function RuleOfThree() {
         <BestItem items={items} />
       }
       <ul>
-        r$ /// g
         {items && items.map((item) => (
         <li key={item.id}>
           {position(items, item)}: R$ {item.price} / {item.weight + item.unit}
@@ -66,20 +65,26 @@ function RuleOfThree() {
       ))}
       </ul>
       <form className={"itemsForm"} onSubmit={handleSubmit}>
-        <input
-          type="text"
-          name="price"
-          value={newItem.price}
-          id="itemValue"
-          onChange={(handleInputChange)}
-        />
-        <input
-          type="text"
-          name="weight"
-          value={newItem.weight}
-          id="itemWeightValue"
-          onChange={(handleInputChange)}
-        />
+        <div className="field">
+          <label htmlFor="price">Preço</label>
+          <input
+            type="text"
+            name="price"
+            value={newItem.price}
+            id="itemValue"
+            onChange={(handleInputChange)}
+          />
+        </div>
+        <div className="field">
+          <label htmlFor="weight">Quantidade</label>
+          <input
+            type="text" 
+            name="weight"
+            value={newItem.weight}
+            id="itemWeightValue"
+            onChange={(handleInputChange)}
+          />
+        </div>
         <button type="submit">Adicionar</button>
       </form>
     </div>

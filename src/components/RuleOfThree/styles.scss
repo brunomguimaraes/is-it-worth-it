@@ -1,0 +1,15 @@
+.itemsForm{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+
+  .field {
+    display: flex;
+    flex-direction: column;
+
+    input {
+      width: 64px;
+    }
+  }
+}
