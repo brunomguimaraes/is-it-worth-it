@@ -7,8 +7,10 @@ import RuleOfThree from '../../components/RuleOfThree';
 function Home() {
   return (
     <div id="page-home">
-      <Cart className="cartPicture"/>
-      <RuleOfThree />
+      <div className={"content"}>
+        <Cart className="cartPicture" />
+        <RuleOfThree />
+      </div>
     </div>
   );
 }

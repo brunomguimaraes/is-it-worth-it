@@ -65,7 +65,7 @@ function RuleOfThree() {
         </li>
       ))}
       </ul>
-      <form onSubmit={handleSubmit}>
+      <form className={"itemsForm"} onSubmit={handleSubmit}>
         <input
           type="text"
           name="price"
