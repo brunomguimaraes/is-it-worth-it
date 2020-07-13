@@ -4,5 +4,6 @@ body {
 
 @font-face {
   font-family: 'Merriweather';
-  src: local('Merriweather'), url(./fonts/Merriweather-Light.ttf) format('truetype');
+  src: local('Merriweather-Light'), url(./fonts/Merriweather-Light.ttf) format('truetype');
+  src: local('Merriweather'), url(./fonts/Merriweather-Regular.ttf) format('truetype');
 }

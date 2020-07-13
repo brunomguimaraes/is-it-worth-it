@@ -8,16 +8,16 @@ function Navbar() {
     <div id="navbar" className={"navbar"}>
       <nav id="top-navbar">
         <ul className={"navList"}>
-          <Link to="/">
-            <li className={"navItem"}>
+          <li className={"navItem"}>
+            <Link to="/">
               Calculadora
-            </li>
           </Link>
-          <Link to="/tutorial">
-            <li className={"navItem"}>
+          </li>
+          <li className={"navItem"}>
+            <Link to="/tutorial">
               Como Usar
-            </li>
           </Link>
+          </li>
         </ul>
       </nav>
     </div>
