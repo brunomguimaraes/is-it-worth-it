@@ -56,10 +56,15 @@ function RuleOfThree() {
       {items &&
         <BestItem items={items} />
       }
-      <ul>
+      <ul className={"productsList"}>
         {items && items.map((item) => (
-          <li key={item.id}>
-            {position(items, item)}: R$ {item.price} / {item.weight + item.unit}
+          <li className={"productListItem"} key={item.id}>
+            <span className={"productListItemPosition"}>
+              {position(items, item)}
+            </span>
+            <span className={"productListItemDescription"}>
+              R$ {item.price} / {item.weight + " und."}
+            </span>
             <button onClick={() => deleteItem(item.id)}>
               <XIcon className="xIcon" />
             </button>
@@ -88,7 +93,7 @@ function RuleOfThree() {
           />
         </div>
         <button type="submit">
-          <PlusIcon className="plusIcon"/>
+          <PlusIcon className="plusIcon" />
         </button>
       </form>
     </div>

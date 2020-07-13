@@ -5,11 +5,12 @@
   padding-top: 32px;
 
   ul {
+    padding-inline-start: 0;
     width: 400px;
     list-style-type: none;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-evenly;
    }
 
   .navItem {
