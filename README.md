@@ -1,3 +1,4 @@
+Live: https://www.calculadorademercado.com.br/
 ## Is it worth it?
 
 Brazilian grocery stores often mistakes price-weight ratio of goods they sell.
