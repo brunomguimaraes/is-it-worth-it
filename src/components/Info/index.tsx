@@ -13,6 +13,10 @@ function Info() {
       procurando sempre o melhor preço, no entanto, nem sempre isso é verdade.
       Existem casos em que as embalagens ditas "econômicas" saem mais caro do que o preço unitário do item.
       </p>
+      <p>
+      Segundo o Procon, os mercados não são obrigados a vender por preços mais baixos os produtos apresentados em pacotes.
+      No entanto, quando essas embalagens configuram ofertas, se não houver vantagem de preço, pode estar caracterizada uma propaganda enganosa.
+      </p>
     </div>
   );
 }
