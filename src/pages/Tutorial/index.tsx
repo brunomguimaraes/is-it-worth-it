@@ -6,7 +6,7 @@ function Tutorial() {
   return (
     <div id="page-tutorial">
       <div className={"content"}>
-        Tutorial
+        Tutorial vai vir aqui
       </div>
     </div>
   );
