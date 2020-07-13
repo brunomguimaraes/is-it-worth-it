@@ -6,8 +6,8 @@ function Info() {
   return (
     <div id="info">
       <h1>Comprar produtos em quantidade nem sempre é o melhor negócio</h1>
-      <h2>Embalagem tamanho família pode sair mais cara que o item avulso.
-      É preciso <ul>sempre</ul> fazer as contas, a calculadora de mercado de ajuda!</h2>
+      <h2>Embalagem tamanho família pode sair mais cara que o item avulso.</h2>
+      <h3> É preciso sempre fazer as contas, a calculadora de mercado de ajuda!</h3>
       <p>Todos queremos economizar, inspirado pelo mercado atacadista,
       normalmente o consumidor opta por embalagens econômicas de um único produto("packs, grades, etc")
       procurando sempre o melhor preço, no entanto, nem sempre isso é verdade.
