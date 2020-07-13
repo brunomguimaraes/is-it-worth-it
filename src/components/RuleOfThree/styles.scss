@@ -2,14 +2,30 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
-
-
+  align-items: center;
+    
   .field {
     display: flex;
     flex-direction: column;
+    // height: 48px;
 
     input {
       width: 64px;
+      height: 26px;
+    }
+  }
+  button {
+    background: var(--primary-color);
+    color: #FFF;
+    height: 32px;
+    border: 0;
+    align-self: flex-end;
+    cursor: pointer;
+    
+    .plusIcon {
+      
+      width: 24px;
+      height: 24px;
     }
   }
 }

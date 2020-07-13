@@ -1,10 +1,11 @@
 import React, { useState, ChangeEvent, FormEvent } from 'react';
+import BestItem from '../BestItem';
+import { ReactComponent as PlusIcon } from '../../assets/plus.svg'
 import { id } from '../../utils/id'
+import { position } from '../../utils/array';
+import { calculatePricePerUnit } from '../../utils/calculators';
 
 import './styles.scss'
-import { position } from '../../utils/array';
-import BestItem from '../BestItem';
-import { calculatePricePerUnit } from '../../utils/calculators';
 
 export interface Item {
   id: string;
@@ -56,13 +57,13 @@ function RuleOfThree() {
       }
       <ul>
         {items && items.map((item) => (
-        <li key={item.id}>
-          {position(items, item)}: R$ {item.price} / {item.weight + item.unit}
-          <button onClick={() => deleteItem(item.id)}>
-            del
+          <li key={item.id}>
+            {position(items, item)}: R$ {item.price} / {item.weight + item.unit}
+            <button onClick={() => deleteItem(item.id)}>
+              del
               </button>
-        </li>
-      ))}
+          </li>
+        ))}
       </ul>
       <form className={"itemsForm"} onSubmit={handleSubmit}>
         <div className="field">
@@ -78,14 +79,16 @@ function RuleOfThree() {
         <div className="field">
           <label htmlFor="weight">Quantidade</label>
           <input
-            type="text" 
+            type="text"
             name="weight"
             value={newItem.weight}
             id="itemWeightValue"
             onChange={(handleInputChange)}
           />
         </div>
-        <button type="submit">Adicionar</button>
+        <button type="submit">
+          <PlusIcon className="plusIcon"/>
+        </button>
       </form>
     </div>
   );
