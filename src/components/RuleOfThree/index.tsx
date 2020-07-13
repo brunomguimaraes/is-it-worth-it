@@ -1,6 +1,7 @@
 import React, { useState, ChangeEvent, FormEvent } from 'react';
 import BestItem from '../BestItem';
 import { ReactComponent as PlusIcon } from '../../assets/plus.svg'
+import { ReactComponent as XIcon } from '../../assets/x.svg'
 import { id } from '../../utils/id'
 import { position } from '../../utils/array';
 import { calculatePricePerUnit } from '../../utils/calculators';
@@ -60,8 +61,8 @@ function RuleOfThree() {
           <li key={item.id}>
             {position(items, item)}: R$ {item.price} / {item.weight + item.unit}
             <button onClick={() => deleteItem(item.id)}>
-              del
-              </button>
+              <XIcon className="xIcon" />
+            </button>
           </li>
         ))}
       </ul>
