@@ -44,10 +44,10 @@ function RuleOfThree() {
     setItems(remainingItems);
   };
 
-  const handleSelectUnit = (event: ChangeEvent<HTMLSelectElement>) => {
-    const unit = event.target.value;
-    console.log("selected Unit", unit)
-  };
+  // const handleSelectUnit = (event: ChangeEvent<HTMLSelectElement>) => {
+  //   const unit = event.target.value;
+  //   console.log("selected Unit", unit)
+  // };
 
   return (
     <div id="ruleOfThree">
