@@ -2,14 +2,25 @@
   height: 100vh;
   margin: 32px;
   max-width: 640px;
+  @media only screen and (max-width: 480px) {
+    margin: 0;
+    padding: 0 12px 12px 12px;
+  }
 
 
   .tutorialPhoto {
     width: 320px;
+
+    @media only screen and (max-width: 480px) {
+      width: 260px;
+    }
   }
   
   .tutorialResultPhoto {
     width: 440px;
+    @media only screen and (max-width: 480px) {
+      width: 280px;
+    }
   }
   
   p {
