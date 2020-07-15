@@ -13,7 +13,7 @@ function Tutorial() {
           voltar
         </Link>
         <p>
-          As vezes ficamos em dúvida se determinada promoção vale a pena. É comum no nosso dia a dia nos depararmos com situações como esta:
+          Às vezes ficamos em dúvida se determinada promoção vale a pena. É comum no nosso dia a dia nos depararmos com situações como esta:
         </p>
         <img className={"tutorialPhoto"} src={example1} alt="Example 1" />
         <p>
