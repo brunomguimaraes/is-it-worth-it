@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { ReactComponent as CartIcon } from '../../assets/cartIcon.svg'
 
 import './styles.scss'
 
@@ -10,8 +11,8 @@ function Navbar() {
         <ul className={"navList"}>
           <li className={"navItem"}>
             <Link to="/">
-              Calculadora
-          </Link>
+              <CartIcon />
+            </Link>
           </li>
           <li className={"navItem"}>
             <Link to="/tutorial">

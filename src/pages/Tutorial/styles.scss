@@ -1,12 +1,19 @@
 #page-tutorial {
   height: 100vh;
   margin: 32px;
-  
+  max-width: 640px;
+
+
   .tutorialPhoto {
     width: 320px;
   }
   
   .tutorialResultPhoto {
-    width: 480px;
+    width: 440px;
+  }
+  
+  p {
+    font-family: opensans, helvetica, arial, sans-serif;
+    font-size: 14px;
   }
 }
