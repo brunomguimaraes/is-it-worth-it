@@ -36,6 +36,10 @@ function Info() {
         <h3>Cuidado com os truques e 'armadilhas' de marketing</h3>
         <p>Tudo no supermercado é feito para você gastar mais: a música, a claridade, os corredores longos, a posição dos produtos etc.. Chocolates e doces costumam ser colocados ao alcance das crianças. Produtos essenciais costumam ficar no fundo para fazer o consumidor percorrer todos os setores.
       </p>
+        <h3>Procure sempre olhar os produtos que estão dispostos na base e no topo das gôndolas.</h3>
+        <p>Muitas vezes esses espaços “esquecidos” tem preços mais em conta do que os que estão na altura dos seus olhos.</p>
+        <h3>Fique sempre atento na hora de passar as compras no caixa. </h3>
+        <p>Acontece algumas vezes do produto com preço promocional não se confirmar na registradora. Ao perceber isso, avise ao caixa para que seja cobrado o valor apresentado na gôndola.</p>
         <h2>Diferença entre Varejo e Atacado?</h2>
         <p>O varejo tem como principal público o consumidor final, principalmente porque vende produtos em quantidades menores, ou seja, por unidade.
         Por outro lado, o atacado é mais voltado para revendedores, pois os volumes são maiores.
